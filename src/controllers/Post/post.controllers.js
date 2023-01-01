@@ -10,11 +10,12 @@ module.exports = {
   },
   async postar(req, res) {
     try {
-      const { nome, url, descricacao } = req.body
+      const { nome, url, descricao, tipoDefornecedor } = req.body
       const link = await Post.create({
         nome,
         url,
-        descricacao,
+        descricao,
+        tipoDefornecedor,
       })
       res.status(201).json({ error: false, link: link })
     } catch (error) {
