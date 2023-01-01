@@ -2,23 +2,7 @@ const Post = require('../../models/Post/post.model')
 module.exports = {
   async buscar(req, res) {
     try {
-      const todosLinks = [
-        {
-          nome: 'jhdd',
-          descricacao: 'sadhushu9dhu9i   iuoashi9sd9 ',
-          url: 'http:jisipos',
-        },
-        {
-          nome: 'jhdd',
-          descricacao: 'sadhushu9dhu9i   iuoashi9sd9 ',
-          url: 'http:jisipos',
-        },
-        {
-          nome: 'jhdd',
-          descricacao: 'sadhushu9dhu9i   iuoashi9sd9 ',
-          url: 'http:jisipos',
-        },
-      ]
+      const todosLinks = Post.find()
       res.status(200).json({ error: false, links: todosLinks })
     } catch (error) {
       res.status(404).json({ error: true, message: ' links não encontrado' })
