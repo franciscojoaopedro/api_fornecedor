@@ -2,7 +2,7 @@ const Post = require('../../models/Post/post.model')
 module.exports = {
   async buscar(req, res) {
     try {
-      const todosLinks = Post.find()
+      const todosLinks = await Post.find()
       res.status(200).json({ error: false, links: todosLinks })
     } catch (error) {
       res.status(404).json({ error: true, message: ' links não encontrado' })
